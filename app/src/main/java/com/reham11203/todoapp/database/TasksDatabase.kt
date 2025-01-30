@@ -8,19 +8,19 @@ import com.reham11203.todoapp.database.dao.TasksDao
 import com.reham11203.todoapp.database.entity.Task
 
 @Database(entities = [Task::class], version = 1, exportSchema = true)
-abstract class AppDatabase : RoomDatabase() {
+abstract class TasksDatabase : RoomDatabase() {
 
     abstract fun tasksDao(): TasksDao
 
     companion object {
         private const val DATABASE_NAME = "todo_tasks"
-        private var appDatabase: AppDatabase? = null
+        private var tasksDatabase: TasksDatabase? = null
 
         fun init(applicatonContext: Context) {
-            if (appDatabase == null) {
-                appDatabase = Room.databaseBuilder(
+            if (tasksDatabase == null) {
+                tasksDatabase = Room.databaseBuilder(
                     applicatonContext,
-                    AppDatabase::class.java,
+                    TasksDatabase::class.java,
                     DATABASE_NAME
 
                 ).allowMainThreadQueries()
@@ -29,9 +29,9 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        fun getInstance(): AppDatabase {
+        fun getInstance(): TasksDatabase {
 
-            return appDatabase!!
+            return tasksDatabase!!
         }
 
     }

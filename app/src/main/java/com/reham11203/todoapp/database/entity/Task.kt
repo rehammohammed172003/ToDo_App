@@ -1,6 +1,5 @@
 package com.reham11203.todoapp.database.entity
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,23 +7,12 @@ import androidx.room.PrimaryKey
 data class Task(
 
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = null,
-
-    @ColumnInfo
-    var title: String? = null,
-
-    @ColumnInfo
+    val id: Int,
+    var title: String,
     var description: String? = null,
-
-    @ColumnInfo
-    var isCompleted: Boolean? = false,
-
-    @ColumnInfo
-    var date: Long? = null,
-
-    @ColumnInfo
-    var time: Long? = null,
-
+    var isCompleted: Boolean = false,
+    var date: Long,
+    var time: Long,
 
     ) {
 
