@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     tools:context=".ui.splash.SplashActivity">
 
     <ImageView
@@ -24,7 +23,7 @@
         android:fontFamily="@font/poppins"
         android:gravity="center"
         android:text="@string/supervised_by_mohamed_nabil"
-        android:textColor="@color/primary_blue"
+        android:textColor="@color/primary"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
 
