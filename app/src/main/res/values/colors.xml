@@ -9,9 +9,9 @@
     <color name="background">@color/lime</color>
     <color name="onBackground">@color/black</color>
     <color name="bottom_nav_bg_color">@color/white</color>
+    <color name="bottom_sheet_text_color_hint">@color/light_gray</color>
 
-
-    <color name="black">#FF000000</color>
+    <color name="black">#383838</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lime">#DFECDB</color>
     <color name="dark_green">#275718</color>
@@ -22,5 +22,6 @@
     <color name="black_blue_light">#141922</color>
     <color name="grey">#C8C9CB</color>
     <color name="red">#ff5722</color>
-
+    <color name="light_gray">#9CA9A9A9</color>
+    <color name="extra_light_gray">#E6CDCACA</color>
 </resources>

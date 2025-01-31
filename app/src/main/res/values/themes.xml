@@ -12,6 +12,15 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="floatingActionButtonStyle">@style/fab_style</item>
         <item name="android:homeAsUpIndicator">@drawable/back</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_bg</item>
     </style>
 
     <style name="Theme.ToDoApp" parent="Base.Theme.ToDoApp" />

@@ -3,13 +3,12 @@ package com.reham11203.todoapp.ui.splash
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.reham11203.todoapp.R
-import com.reham11203.todoapp.ui.HomeActivity
+import com.reham11203.todoapp.ui.home.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +21,14 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
+        Handler(mainLooper).postDelayed({
+            navigateToHome()
         }, 2000)
+    }
+
+    private fun navigateToHome() {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
