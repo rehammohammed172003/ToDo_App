@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="32dp"
+    android:paddingTop="8dp"
+    tools:context=".ui.home.fragments.tasks_fragment.AddTaskFragment">
+
+    <View
+        android:id="@+id/dismiss"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@drawable/dismiss"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".3" />
+
+    <TextView
+        android:id="@+id/bottom_sheet_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/add_new_task"
+        android:textAlignment="center"
+        android:textColor="?colorOnBackground"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/dismiss" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/task_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/enter_your_task_name"
+        android:paddingVertical="16dp"
+        android:textColorHint="@color/bottom_sheet_text_color_hint"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_sheet_title" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/task_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/description"
+        android:paddingVertical="24dp"
+        android:textColorHint="@color/bottom_sheet_text_color_hint"
+        app:layout_constraintTop_toBottomOf="@+id/task_title" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/select_date_til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/select_time_til"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_description">
+
+        <TextView
+            android:id="@+id/select_date_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/select_date"
+            android:padding="10dp"
+            android:textColor="?colorOnBackground"
+            android:textColorHint="?colorOnBackground"
+            app:layout_constraintTop_toBottomOf="@id/task_description" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/select_time_til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/select_date_til"
+        app:layout_constraintTop_toBottomOf="@+id/task_description">
+
+        <TextView
+            android:id="@+id/select_time_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/select_time"
+            android:padding="10dp"
+            android:textColor="?colorOnBackground"
+            android:textColorHint="?colorOnBackground" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_task_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/blue"
+        android:contentDescription="@string/add_new_task"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_date_til" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
