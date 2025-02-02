@@ -34,5 +34,41 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
         <item name="background">@drawable/button_bg</item>
+        <item name="colorSurface">@color/bottom_nav_bg_color</item>
+    </style>
+
+
+    <!--     Time picker-->
+
+    <style name="customTimePickerTheme" parent="ThemeOverlay.Material3.MaterialTimePicker">
+
+        <item name="materialClockStyle">@style/Widget.App.TimePicker.Clock</item>
+        <item name="chipStyle">@style/BaseTheme.Widget.Chip</item>
+        <item name="materialButtonOutlinedStyle">@style/AppTheme.Widget.TimePicker.Clock.AmPmButton
+        </item>
+        <item name="colorSurfaceContainerHigh">@color/time_picker_bg</item>
+
+    </style>
+
+    <!--    TimePicker Display style-->
+    <style name="BaseTheme.Widget.Chip" parent="Widget.MaterialComponents.TimePicker.Display">
+        <item name="android:textColor">@color/selector_text_chip</item>
+        <item name="chipBackgroundColor">@color/selector_bg_chip</item>
+
+    </style>
+
+
+    <!--    Clock style-->
+    <style name="Widget.App.TimePicker.Clock" parent="Widget.MaterialComponents.TimePicker.Clock">
+        <item name="clockFaceBackgroundColor">@color/time_picker_clock_bg</item>
+        <item name="clockHandColor">@color/primary</item>
+        <item name="clockNumberTextColor">@color/onBackground</item>
+    </style>
+
+    <!--    AM/PM Button style-->
+    <style name="AppTheme.Widget.TimePicker.Clock.AmPmButton" parent="Widget.MaterialComponents.TimePicker.Button">
+        <item name="backgroundTint">@color/selector_bg_chip</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="android:textColor">@color/selector_text_chip</item>
     </style>
 </resources>

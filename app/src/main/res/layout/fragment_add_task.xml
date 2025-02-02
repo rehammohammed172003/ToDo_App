@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingHorizontal="32dp"
     android:paddingTop="8dp"
-    tools:context=".ui.home.fragments.tasks_fragment.AddTaskFragment">
+    tools:context=".ui.home.fragments.AddTaskFragment">
 
     <View
         android:id="@+id/dismiss"

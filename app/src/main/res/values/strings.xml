@@ -8,5 +8,7 @@
     <string name="description">description</string>
     <string name="select_date">Select Date</string>
     <string name="select_time">Select Time\n</string>
+    <string name="required_field">required field</string>
+
 
 </resources>
