@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.reham11203.todoapp.R
 import com.reham11203.todoapp.databinding.ActivityHomeBinding
-import com.reham11203.todoapp.ui.home.fragments.tasks_fragment.AddTaskFragment
-import com.reham11203.todoapp.ui.home.fragments.tasks_fragment.SettingsFragment
+import com.reham11203.todoapp.ui.home.fragments.AddTaskFragment
+import com.reham11203.todoapp.ui.home.fragments.SettingsFragment
 import com.reham11203.todoapp.ui.home.fragments.tasks_fragment.TasksFragment
 
 class HomeActivity : AppCompatActivity() {
@@ -25,6 +25,10 @@ class HomeActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
             val bottomSheet = AddTaskFragment()
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
+            bottomSheet.onTaskAdded = AddTaskFragment.OnTaskAdded { task ->
+                // reload data in a recycler view at Task Fragment
+
+            }
         }
     }
 

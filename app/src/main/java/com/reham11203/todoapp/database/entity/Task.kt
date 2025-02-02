@@ -12,9 +12,5 @@ data class Task(
     var description: String? = null,
     var isCompleted: Boolean = false,
     var date: Long,
-    var time: Long,
-
-    ) {
-
-
-}
+    var time: Long
+)

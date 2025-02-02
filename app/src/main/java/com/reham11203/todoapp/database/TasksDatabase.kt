@@ -16,13 +16,12 @@ abstract class TasksDatabase : RoomDatabase() {
         private const val DATABASE_NAME = "todo_tasks"
         private var tasksDatabase: TasksDatabase? = null
 
-        fun init(applicatonContext: Context) {
+        fun init(applicationContext: Context) {
             if (tasksDatabase == null) {
                 tasksDatabase = Room.databaseBuilder(
-                    applicatonContext,
+                    applicationContext,
                     TasksDatabase::class.java,
                     DATABASE_NAME
-
                 ).allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
                     .build()
@@ -30,10 +29,7 @@ abstract class TasksDatabase : RoomDatabase() {
         }
 
         fun getInstance(): TasksDatabase {
-
             return tasksDatabase!!
         }
-
     }
-
 }
