@@ -10,6 +10,8 @@ import com.reham11203.todoapp.database.TasksDatabase
 import com.reham11203.todoapp.database.dao.TasksDao
 import com.reham11203.todoapp.database.entity.Task
 import com.reham11203.todoapp.databinding.FragmentAddTaskBinding
+import com.reham11203.todoapp.ui.util.clearDate
+import com.reham11203.todoapp.ui.util.clearSeconds
 import com.reham11203.todoapp.ui.util.clearTime
 import com.reham11203.todoapp.ui.util.getFormattedTime
 import com.reham11203.todoapp.ui.util.showDatePickerDialog
@@ -48,6 +50,7 @@ class AddTaskFragment : BottomSheetDialogFragment() {
             val task = createTask()
             dao.addNewTask(task)
             onTaskAdded?.onTaskAdded(task)
+            dismiss()
 
         }
     }
@@ -57,9 +60,7 @@ class AddTaskFragment : BottomSheetDialogFragment() {
             title = binding.taskTitle.text.toString(),
             date = dateCalendar.timeInMillis,
             time = timeCalendar.timeInMillis,
-            description = binding.taskDescription.text.toString(),
-            id = TODO(),
-            isCompleted = TODO(),
+            description = binding.taskDescription.text.toString()
         )
     }
 
@@ -92,6 +93,10 @@ class AddTaskFragment : BottomSheetDialogFragment() {
                 childFragmentManager
             ) { hour, minute ->
                 binding.selectTimeTv.text = getFormattedTime(hour, minute)
+                timeCalendar.set(Calendar.HOUR, hour)
+                timeCalendar.set(Calendar.MINUTE, minute)
+                timeCalendar.clearDate()
+                timeCalendar.clearSeconds()
             }
 
         }
