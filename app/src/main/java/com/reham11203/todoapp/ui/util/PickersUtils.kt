@@ -11,7 +11,7 @@ import java.util.Calendar
 fun showDatePickerDialog(context: Context, callback: (String, Calendar) -> Unit) {
 
     val dateDialog = DatePickerDialog(context)
-
+    dateDialog.datePicker.minDate = System.currentTimeMillis()
     dateDialog.setOnDateSetListener { view, year, month, dayOfMonth ->
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.YEAR, year)
