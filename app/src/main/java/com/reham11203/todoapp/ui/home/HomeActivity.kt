@@ -11,12 +11,14 @@ import com.reham11203.todoapp.ui.home.fragments.tasks_fragment.TasksFragment
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
+    var taskFragment: TasksFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        taskFragment = supportFragmentManager.findFragmentByTag("TASKS_FRAGMENT") as? TasksFragment
+            ?: TasksFragment()
         setNavigation()
         setOnFabClick()
     }
@@ -27,6 +29,7 @@ class HomeActivity : AppCompatActivity() {
             bottomSheet.show(supportFragmentManager, bottomSheet.tag)
             bottomSheet.onTaskAdded = AddTaskFragment.OnTaskAdded { task ->
                 // reload data in a recycler view at Task Fragment
+                taskFragment?.loadAllTasksOfDate(task.date)
 
             }
         }
@@ -37,22 +40,23 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomNavView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.tasks -> {
-                    showFragment(TasksFragment())
+                    showFragment(taskFragment!!, "TASKS_FRAGMENT")
                     binding.appBarTitle.text = getString(R.string.app_name)
                 }
 
                 R.id.settings -> {
-                    showFragment(SettingsFragment())
+                    showFragment(SettingsFragment(), "SETTINGS_FRAGMENT")
                     binding.appBarTitle.text = getString(R.string.settings)
                 }
             }
             true
         }
+        binding.bottomNavView.selectedItemId = R.id.tasks
     }
 
-    private fun showFragment(fragment: Fragment) {
+    private fun showFragment(fragment: Fragment, tag: String) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container, fragment, tag)
             .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
             .commit()
     }

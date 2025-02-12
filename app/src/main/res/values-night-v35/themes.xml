@@ -7,6 +7,8 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
+        <item name="colorSurfaceContainer">@color/bottom_nav_bg_color</item>
+        <item name="colorSecondaryContainer">@color/primary</item>
         <item name="android:colorBackground">@color/background</item>
         <item name="android:colorForeground">@color/onBackground</item>
         <item name="floatingActionButtonStyle">@style/fab_style</item>
@@ -14,5 +16,10 @@
         <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
         <item name="android:windowIsTranslucent">true</item>
 
+    </style>
+
+    <style name="CalendarView">
+        <item name="mcv_leftArrowMask">@drawable/ic_left_arrow</item>
+        <item name="mcv_rightArrowMask">@drawable/ic_right_arrow</item>
     </style>
 </resources>

@@ -6,6 +6,8 @@
         <item name="colorOnPrimary">@color/onPrimary</item>
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
+        <item name="colorSurfaceContainer">@color/bottom_nav_bg_color</item>
+        <item name="colorSecondaryContainer">@color/primary</item>
         <item name="android:colorBackground">@color/background</item>
         <item name="android:colorForeground">@color/onBackground</item>
         <item name="android:statusBarColor">@color/primary</item>
@@ -13,6 +15,7 @@
         <item name="floatingActionButtonStyle">@style/fab_style</item>
         <item name="android:homeAsUpIndicator">@drawable/back</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
     </style>
 
     <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
@@ -70,5 +73,37 @@
         <item name="backgroundTint">@color/selector_bg_chip</item>
         <item name="strokeColor">@color/primary</item>
         <item name="android:textColor">@color/selector_text_chip</item>
+    </style>
+
+    <style name="CalendarView">
+        <item name="mcv_leftArrowMask">@drawable/ic_black_l_arrow</item>
+        <item name="mcv_rightArrowMask">@drawable/ic_black_r_arrow</item>
+    </style>
+
+    <style name="outlinedInputText" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeColor">@color/blue</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="android:textColorHint">@color/blue</item>
+        <item name="android:background">@color/bottom_nav_bg_color</item>
+        <item name="android:layout_margin">24dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawSelectorOnTop">true</item>
+    </style>
+
+    <style name="CustomAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:background">@color/bottom_nav_bg_color</item>
+    </style>
+
+    <style name="AppBarTitle">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:padding">24dp</item>
     </style>
 </resources>

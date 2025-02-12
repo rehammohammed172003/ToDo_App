@@ -13,7 +13,7 @@ abstract class TasksDatabase : RoomDatabase() {
     abstract fun tasksDao(): TasksDao
 
     companion object {
-        private const val DATABASE_NAME = "todo_tasks"
+        private const val DATABASE_NAME = "tasks"
         private var tasksDatabase: TasksDatabase? = null
 
         fun init(applicationContext: Context) {
