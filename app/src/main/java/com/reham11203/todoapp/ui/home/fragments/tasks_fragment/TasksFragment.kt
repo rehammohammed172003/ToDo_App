@@ -1,11 +1,13 @@
 package com.reham11203.todoapp.ui.home.fragments.tasks_fragment
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -69,12 +71,16 @@ class TasksFragment : Fragment() {
             dao.updateTask(task)
             adapter.updateTask(position, task)
         }
-
+        val editTaskLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    loadAllTasksOfDate(getSelectedDate().timeInMillis)
+                }
+            }
         adapter.onTaskClickListener = TasksAdapter.OnTaskClickListener { position, task ->
             val intent = Intent(requireContext(), EditTaskActivity::class.java)
             intent.putExtra(Constants.TASK_KEY, task)
-            startActivity(intent)
-
+            editTaskLauncher.launch(intent)
         }
 
 
