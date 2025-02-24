@@ -1,7 +1,6 @@
 package com.reham11203.todoapp.ui.home
 
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.IntentCompat
 import com.reham11203.todoapp.R
@@ -52,11 +51,15 @@ class EditTaskActivity : AppCompatActivity() {
     }
 
     private fun updateTaskAndFinish() {
+        if (!validateInput()) {
+            return
+        }
         newTask.apply {
             title = binding.taskTitle.text.toString()
             description = binding.taskDescription.text.toString()
         }
         dao.updateTask(newTask)
+        setResult(RESULT_OK)
         finish()
     }
 
@@ -77,11 +80,10 @@ class EditTaskActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolBar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                finish()
-            }
-        })
+        binding.toolBar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
     }
 
     private fun initViews() {
