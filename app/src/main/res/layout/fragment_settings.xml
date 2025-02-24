@@ -22,7 +22,7 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/language"
         android:textColor="@color/onBackground"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_view" />
 
@@ -35,12 +35,17 @@
         app:layout_constraintTop_toBottomOf="@+id/language_tv">
 
         <AutoCompleteTextView
+            android:id="@+id/language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/english"
             android:inputType="none"
+            android:fontFamily="@font/inter"
             android:textColor="@color/blue"
-            app:simpleItems="@array/Languages" />
+            app:simpleItems="@array/Languages"
+            tools:text="@string/english"
+
+
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -52,7 +57,7 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/mode"
         android:textColor="@color/onBackground"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/languages_menu" />
 
@@ -65,11 +70,13 @@
         app:layout_constraintTop_toBottomOf="@+id/mode_tv">
 
         <AutoCompleteTextView
+            android:id="@+id/mode"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/light"
             android:inputType="none"
+            android:fontFamily="@font/inter"
             android:textColor="@color/blue"
+            tools:text="@string/light"
             app:simpleItems="@array/Modes" />
     </com.google.android.material.textfield.TextInputLayout>
 
