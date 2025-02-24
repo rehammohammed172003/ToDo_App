@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">قائمة المهام</string>
+    <string name="settings">الإعدادات</string>
+    <string name="tasks">المهام</string>
+    <string name="add_new_task">أضف مهمة جديدة</string>
+    <string name="select_date">حدد التاريخ </string>
+    <string name="select_time">حدد الوقت</string>
+    <string name="required_field">هذه الخانة مطلوبة</string>
+    <string name="delete">حذف</string>
+    <string name="language">اللغة</string>
+    <string name="mode">وضع الشاشة</string>
+    <string name="english">الإنجليزية</string>
+    <string name="arabic">العربية</string>
+    <string name="light">الوضع النهاري</string>
+    <string name="dark">الوضع الليلي</string>
+    <string name="edit_task">تحرير المهمة</string>
+    <string name="save">حفظ</string>
+    <string name="task_description">التفاصيل</string>
+    <string name="task_title">عنوان المهمة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="delete_confirmation_message">هل أنت متأكد أنك تريد حذف هذه المهمة؟</string>
+
+
+</resources>

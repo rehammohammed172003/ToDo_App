@@ -82,14 +82,14 @@ class TasksFragment : Fragment() {
 
     private fun showDeleteDialog(position: Int, task: Task) {
         val dialog = MaterialAlertDialogBuilder(requireContext(), R.style.CustomAlertDialog)
-            .setTitle("Delete")
-            .setMessage("Are you sure you want to delete this task?")
-            .setPositiveButton("Delete") { dialog, _ ->
+            .setTitle(getString(R.string.delete))
+            .setMessage(getString(R.string.delete_confirmation_message))
+            .setPositiveButton(getString(R.string.delete)) { dialog, _ ->
                 dao.deleteTask(task)
                 adapter.deleteTask(position)
                 dialog.dismiss()
             }
-            .setNegativeButton("Cancel") { dialog, _ ->
+            .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
                 dialog.dismiss()
             }
             .show()

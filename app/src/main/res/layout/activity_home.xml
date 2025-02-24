@@ -56,7 +56,8 @@
             app:itemIconTint="@color/selector_btm_nav_icon"
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_app_bar_menu"
-
+            android:layoutDirection="ltr"
+            app:itemIconSize="30dp"
 
             />
     </com.google.android.material.bottomappbar.BottomAppBar>
@@ -70,7 +71,6 @@
         android:src="@drawable/ic_add"
         app:layout_anchor="@id/bottomAppBar"
         app:tint="@color/white"
-
         />
 
     <include
