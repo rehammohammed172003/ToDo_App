@@ -8,17 +8,19 @@
     android:layout_margin="24dp"
     app:draggedItem="@id/drag_item"
     app:leftItem="@id/left_view"
+    android:layoutDirection="ltr"
     app:swipeDirection="right">
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/left_view"
-        android:layout_width="90dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@drawable/delete_background"
         android:fontFamily="@font/inter"
         android:gravity="center"
+        app:iconPadding="8dp"
         android:text="@string/delete"
         android:textColor="@color/white"
         android:textSize="14sp"
@@ -34,6 +36,7 @@
         android:backgroundTint="@color/bottom_nav_bg_color"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
+        android:layoutDirection="ltr"
         app:strokeColor="@android:color/transparent">
 
         <androidx.constraintlayout.widget.ConstraintLayout

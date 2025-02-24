@@ -14,9 +14,6 @@
         android:theme="@style/Theme.ToDoApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.EditTaskActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -26,8 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.home.HomeActivity"
-            android:exported="false" />
+            android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.home.EditTaskActivity" />
 
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"

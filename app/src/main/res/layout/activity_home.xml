@@ -57,7 +57,7 @@
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/bottom_app_bar_menu"
             android:layoutDirection="ltr"
-            app:itemIconSize="30dp"
+            app:itemIconSize="25dp"
 
             />
     </com.google.android.material.bottomappbar.BottomAppBar>
